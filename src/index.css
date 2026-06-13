@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-surface: var(--brand-surface);
+  
+  --radius-brand: var(--radius-brand);
+  --shadow-luxe: var(--shadow-luxe);
+
+  --font-sans: "Inter", "Outfit", system-ui, sans-serif;
+  --font-heading: "Outfit", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --brand-primary: #4F46E5;
+    --brand-secondary: #0F172A;
+  }
+
+  body {
+    @apply bg-white text-brand-secondary font-sans antialiased overflow-x-hidden text-[15px];
+  }
+
+  h1 { @apply font-heading font-bold text-brand-secondary tracking-tight text-5xl md:text-6xl; }
+  h2 { @apply font-heading font-bold text-brand-secondary tracking-tight text-3xl md:text-4xl; }
+  h3 { @apply font-heading font-bold text-brand-secondary tracking-tight text-xl; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+
+  .container-custom {
+    max-width: var(--container-max-width, 1280px);
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-brand text-white bg-brand-primary hover:bg-brand-primary-hover transition-all duration-200 transform hover:scale-[1.02];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-gray-200 text-base font-medium rounded-brand text-brand-secondary bg-white hover:bg-gray-50 transition-all duration-200;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f6f7f8 25%, #edeef1 50%, #f6f7f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
