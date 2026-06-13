@@ -1,0 +1,32 @@
+{
+  "template_id": "ecommerce-001",
+  "brand": {
+    "name": "Aurora Luxe",
+    "logo": "/assets/logo.svg",
+    "logoWhite": "/assets/logo-white.svg"
+  },
+  "theme": {
+    "colors": {
+      "primary": "#4F46E5",
+      "primaryHover": "#4338CA",
+      "secondary": "#0F172A",
+      "accent": "#FB7185",
+      "surface": "#FFFFFF",
+      "text": "#0F172A",
+      "textMuted": "#64748B"
+    },
+    "borderRadius": "0.5rem",
+    "shadows": {
+      "luxe": "0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05)"
+    }
+  },
+  "layout": {
+    "containerMaxWidth": "1280px",
+    "sectionGap": "100px",
+    "heroHeight": "60vh"
+  },
+  "features": {
+    "productImageCycleInterval": 4000,
+    "categorySliderItems": 6
+  }
+}
